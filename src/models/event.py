@@ -1,8 +1,9 @@
 """ Calender module
     defines the calendar class"""
+from models.abstract.storage import IStorage
 
 
-class Event():
+class Event(IStorage):
     """  event class
     Prop:
         date
