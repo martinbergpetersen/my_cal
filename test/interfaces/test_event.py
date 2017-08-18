@@ -1,8 +1,7 @@
 import unittest
-from src.models.event import Event
 
 
-class TestLocal(unittest.TestCase):
+class TestLocalEvent(unittest.TestCase):
 
     def test_create(self):
         pass
