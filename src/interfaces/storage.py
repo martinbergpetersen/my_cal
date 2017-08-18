@@ -1,9 +1,8 @@
 """ crud metaclass """
-
 from abc import ABCMeta, abstractmethod
 
 
-class IStorage(ABCMeta):
+class Storage(ABCMeta):
     """
     storage abstract class containing
     create, read, update, delete
@@ -11,16 +10,30 @@ class IStorage(ABCMeta):
 
     @abstractmethod
     def create(self):
+        """ abstract create
+        """
         pass
 
     @abstractmethod
-    def read(self):
+    def read(self, key, val):
+        """ abstract read
+         class method
+            prop:
+                key
+                value
+        """
         pass
 
     @abstractmethod
     def update(self):
+        """ abstract update
+        class method
+        """
         pass
 
     @abstractmethod
     def delete(self):
+        """ abstract delete
+        class method
+        """
         pass
