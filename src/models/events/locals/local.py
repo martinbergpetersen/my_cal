@@ -6,7 +6,7 @@ from src.interfaces.event import Event
 
 class Local(Event):
     """  event class
-    uses the Event abstract class
+    uses the 'Event' abstract class
     Prop:
         date
         description
