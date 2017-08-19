@@ -41,4 +41,25 @@ class TestLocal(unittest.TestCase):
         self.assertEqual(local.user.username, expected)
 
     def test_user_password(self):
+        expected = 'password'
+        user = LocalUser(username=expected, password='password')
+        local = Local(date='1999-02-02', title='cera meting',
+                      description='fun fun fun', user=user,
+                      rating=Rating.high)
+
+        self.assertEqual(local.user.password, expected)
         pass
+
+    def test_user_create(self):
+        expected = 1
+        local = Local(date='1999-02-02', title='cera meting',
+                      description='fun fun fun', user=None,
+                      rating=Rating.high)
+        result = local.create('storage')
+        self.assertEquals(result, expected)
+
+    def test_user_read(self):
+        expected = 1
+        result = Local.update('key', 'value', 'storage')
+        self.assertEquals(result, expected)
+

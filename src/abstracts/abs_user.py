@@ -1,8 +1,7 @@
 from abc import ABCMeta, abstractproperty
 
 
-class User(metaclass=ABCMeta):
-
+class AbsUser(metaclass=ABCMeta):
     """ localuser class
             properties:
                 - username

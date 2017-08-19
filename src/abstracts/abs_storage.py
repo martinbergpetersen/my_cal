@@ -2,37 +2,41 @@
 from abc import ABCMeta, abstractmethod
 
 
-class Storage(ABCMeta):
+class AbsStorage(ABCMeta):
     """
     storage abstract class containing
     create, read, update, delete
     """
 
+    @classmethod
     @abstractmethod
-    def create(self):
+    def create(cls, event):
         """ abstract create
         """
         pass
 
+    @classmethod
     @abstractmethod
-    def read(self, key, val):
+    def read(cls, key, val):
         """ abstract read
-         class method
+         class methodself
             prop:
                 key
                 value
         """
         pass
 
+    @classmethod
     @abstractmethod
-    def update(self):
+    def update(cls, key, val):
         """ abstract update
         class method
         """
         pass
 
+    @classmethod
     @abstractmethod
-    def delete(self):
+    def delete(cls, key, val):
         """ abstract delete
         class method
         """

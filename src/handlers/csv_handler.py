@@ -1,10 +1,10 @@
 """ a csv handler """
 import csv # NOQA - use for later
-from src.interfaces.storage import Storage
+from src.abstracts.abs_storage import AbsStorage
 # from models.interfaces.event import Event
 
 
-class CSV(Storage):
+class CSV(AbsStorage):
 
     """ CSV handler
     methods:
@@ -13,31 +13,33 @@ class CSV(Storage):
         update
         delete
     """
-    def __init__(self, event=None):
-        self.event = event
+    def __init__(self):
+        pass
 
-    def create(self):
+    @classmethod
+    def create(cls, event):
         print("create")
 
-    def read(self, key, val):
+    @classmethod
+    def read(cls, key, val):
         """ read by
             Attri:
-                key for searching
+                key, val
                 prefix:
                     event_XXX
                     user_username
                     group_name
                 example of searching for the event date
-                    result = read_by('event_date')
-                val:
-                    '2017-08-08'
+                    result = read_by(key='event_date', value='2017-08-08')
         """
         print("read by id")
 
-    def update(self):
+    @classmethod
+    def update(cls, key, value):
         print("update")
 
-    def delete(self):
+    @classmethod
+    def delete(cls, key, value):
         print("delete")
 
     # TODO

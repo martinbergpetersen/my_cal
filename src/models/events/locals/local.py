@@ -1,17 +1,21 @@
 """ Calender module
     defines the calendar class"""
 # from models.interfaces.storage import Storage
-from src.interfaces.event import Event
+from src.abstracts.abs_event import AbsEvent
 
 
-class Local(Event):
+class Local(AbsEvent):
     """  event class
     uses the 'Event' abstract class
     Prop:
         date
         description
         rating
-    Info:
+        user
+        group
+    Methods:
+        create
+        read
     """
 
     def __init__(self, date, title,  description,
@@ -47,17 +51,30 @@ class Local(Event):
     @property
     def group(self):
         return self._group
-    # @Event.date.setter
-    # def date(self, val):
-    #     self.date = val
-    #     return
 
-    # @Event.description.setter
-    # def description(self, val):
-    #     self.description = val
-    #     return
+    def create(self, storage):
+        return 1
 
-    # @Event.rating.setter
-    # def rating(self, val):
-    #     self.rating = val
-    #     return
+    @classmethod
+    def read(cls, key, val, storage):
+        """ read by
+            Attri:
+                key for searching
+                prefix:
+                    event_XXX
+                    user_username
+                    group_name
+                example of searching for the event date
+                    result = read_by('event_date')
+                val:
+                    '2017-08-08'
+        """
+        return 1
+
+    @classmethod
+    def update(cls, key, val, storage):
+        return 1
+
+    @classmethod
+    def delete(cls, key, val, storage):
+        return 1

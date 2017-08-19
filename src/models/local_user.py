@@ -1,7 +1,7 @@
-from src.interfaces.user import User
+from src.abstracts.abs_user import AbsUser
 
 
-class LocalUser(User):
+class LocalUser(AbsUser):
     """ local user
         data is from local computer
         param
